@@ -31,6 +31,10 @@ jobs:
 
        - name: Initializing environment
          run: |
+            sudo rm -rf /usr/share/dotnet
+            sudo rm -rf /opt/ghc
+            sudo rm -rf "/usr/local/share/boost"
+            sudo rm -rf "$AGENT_TOOLSDIRECTORY"
             sudo apt install software-properties-common -y
             sudo add-apt-repository http://cz.archive.ubuntu.com/ubuntu jammy main multiverse
             sudo rm -rf /usr/share/dotnet /etc/mysql /etc/php /etc/apt/sources.list.d
