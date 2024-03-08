@@ -57,6 +57,7 @@ jobs:
             
        - name: Sync recovery source and device tree
          run: |
+             rm -rf ~/work
              cd ~
              mkdir work
              cd work
