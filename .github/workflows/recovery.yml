@@ -57,6 +57,7 @@ jobs:
             
        - name: Sync recovery source and device tree
          run: |
+             cd ~
              mkdir work
              cd work
              repo init -u $MANIFEST --depth=1
@@ -68,9 +69,9 @@ jobs:
              
        - name: Build
          run: |
-              cd work
+              cd ~/work
               . build/envsetup.sh
-              lunch work
+              lunch 
               make recoveryimage
               
        - name: Release recovery image
